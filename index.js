@@ -190,9 +190,9 @@ class Student extends Lambdasian{
   }
   graduate(){
     if(this.grade >= 70){
-      return `Congratulations you have Graduated Lambda School`;
+      return `Congratulations ${this.name}! You have Graduated Lambda School`;
     }else{
-      return `You need a better score than that to Graduate! Study Harder and try again!`;
+      return `${this.name} you need a better score than that to Graduate! Study Harder and try again!`;
     }
   }
   // - Add a graduate method to a student.
@@ -245,6 +245,9 @@ const Ricardo = new Instructor({
 })
 
 const John = new Student({
+  name: `John`,
+  age: 25,
+  location: `New York`,
   previousBackground: `AeroSpace Engineering`,
   className: `ls1910`, 
   favSubjects: ['HTML','CSS', 'JS'],
