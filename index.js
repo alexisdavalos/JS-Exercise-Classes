@@ -147,7 +147,10 @@ class Instructor extends Lambdasian{
     return `Today we are learning about ${subject}`
   }
   grade(student, subject){
-    return `${this.name} receives a perfect score on ${subject}`;
+    return `${student.name} receives a perfect score on ${subject}`;
+  }
+  points(student,points){
+
   }
 }
 
@@ -171,7 +174,8 @@ class Student extends Lambdasian{
     super(attr);
     this.previousBackground = attr.previousBackground,
     this.className = attr.className,
-    this.favSubjects = attr.favSubjects
+    this.favSubjects = attr.favSubjects,
+    this.grade = 86
   }
   listSubjects(){
     return `Loving ${this.favSubjects}`;
@@ -198,7 +202,18 @@ class Student extends Lambdasian{
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
+class ProjectManager extends Instructor {
+  constructor(attr){
+    super(attr);
+    this.gradClassName = attr.gradClassName,
+    this.favInstructor = attr.favInstructor
+  }
+  standUp(channel){
+    return `${this.name} announces to ${channel}, @channel standy times!`;
+  }
+  debugsCode(student,subject){
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+  }
 
 }
 
