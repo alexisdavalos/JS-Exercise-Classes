@@ -151,7 +151,7 @@ class Instructor extends Lambdasian{
   }
   points(student){
 
-    return student.grade += Math.floor(Math.random() *100);
+    return student.grade += Math.floor(Math.random() *99);
 
   }
 }
@@ -177,7 +177,7 @@ class Student extends Lambdasian{
     this.previousBackground = attr.previousBackground,
     this.className = attr.className,
     this.favSubjects = attr.favSubjects,
-    this.grade = 0
+    this.grade = 1
   }
   listSubjects(){
     return `Loving ${this.favSubjects}`;
