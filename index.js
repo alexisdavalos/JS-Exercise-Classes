@@ -149,7 +149,9 @@ class Instructor extends Lambdasian{
   grade(student, subject){
     return `${student.name} receives a perfect score on ${subject}`;
   }
-  points(student,points){
+  points(student){
+
+    return student.grade += Math.floor(Math.random() *100);
 
   }
 }
@@ -175,7 +177,7 @@ class Student extends Lambdasian{
     this.previousBackground = attr.previousBackground,
     this.className = attr.className,
     this.favSubjects = attr.favSubjects,
-    this.grade = 86
+    this.grade = 0
   }
   listSubjects(){
     return `Loving ${this.favSubjects}`;
@@ -186,6 +188,16 @@ class Student extends Lambdasian{
   sprintChallenge(subject){
     return `${this.name} has begun sprint challenge on ${subject}`;
   }
+  graduate(){
+    if(this.grade >= 70){
+      return `Congratulations you have Graduated Lambda School`;
+    }else{
+      return `You need a better score than that to Graduate! Study Harder and try again!`;
+    }
+  }
+  // - Add a graduate method to a student.
+  // + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
+  // + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 
 }
 
@@ -225,6 +237,21 @@ class ProjectManager extends Instructor {
       + This method, when called, will check the grade of the student and see if they're ready to graduate from Lambda School
       + If the student's grade is above a 70% let them graduate! Otherwise go back to grading their assignments to increase their score.
 */
+
+const Ricardo = new Instructor({
+  specialty: 'Software Engineering',
+  favLanguage: 'React',
+  catchPhrase: 'Howdyy'
+})
+
+const John = new Student({
+  previousBackground: `AeroSpace Engineering`,
+  className: `ls1910`, 
+  favSubjects: ['HTML','CSS', 'JS'],
+
+});
+console.log(Ricardo.points(John));
+console.log(John.graduate());
 
 ///////// END OF CHALLENGE /////////
 ///////// END OF CHALLENGE /////////
