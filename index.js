@@ -190,7 +190,7 @@ class Student extends Lambdasian{
   }
   graduate(){
     if(this.grade >= 70){
-      return `Congratulations ${this.name}! You have Graduated Lambda School`;
+      return `Congratulations ${this.name}! You have Graduated Lambda School with a ${this.grade}% score!`;
     }else{
       return `${this.name} you need a better score than that to Graduate! Study Harder and try again!`;
     }
